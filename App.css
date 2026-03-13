@@ -1,0 +1,5 @@
+/* UniCar – mobile-first; layout handled by Tailwind per page */
+#root {
+  min-height: 100%;
+  width: 100%;
+}

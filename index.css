@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
+    --trust: 217 91% 60%;
+    --trust-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.04), 0 4px 12px 0 hsl(0 0% 0% / 0.06);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.05), 0 10px 25px -5px hsl(0 0% 0% / 0.08);
+  }
+
+  .safe-bottom {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5rem);
+  }
+
+  /* Section titles – consistent hierarchy */
+  .section-title {
+    @apply text-[0.9375rem] font-bold tracking-tight text-foreground;
+  }
+
+  .section-title-lg {
+    @apply text-base font-bold tracking-tight text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-xs text-muted-foreground mt-0.5;
+  }
+
+  /* Spacing scale for sections */
+  .section-gap {
+    @apply mt-6;
+  }
+
+  .content-gap {
+    @apply mt-3;
+  }
+
+  /* Empty state container */
+  .empty-state {
+    @apply flex flex-col items-center justify-center py-10 px-4 text-center;
+  }
+
+  .empty-state-icon {
+    @apply text-muted-foreground/40;
+  }
+
+  .empty-state-title {
+    @apply mt-4 text-sm font-semibold text-foreground;
+  }
+
+  .empty-state-desc {
+    @apply mt-1.5 text-xs text-muted-foreground max-w-[240px];
+  }
+
+  .empty-state-cta {
+    @apply mt-5;
+  }
+}
